@@ -17,8 +17,8 @@ call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('skywind3000/asyncrun.vim')
 
-call minpac#add('w0rp/ale')   " async syntax checking
-call minpac#add('Valloric/YouCompleteMe')
+call minpac#add('dense-analysis/ale')   " async syntax checking
+call minpac#add('ycm-core/YouCompleteMe')
 
 call minpac#add('tpope/vim-endwise')
 call minpac#add('tomtom/tcomment_vim')
@@ -38,5 +38,7 @@ call minpac#add('othree/es.next.syntax.vim')
 " call minpac#add('mxw/vim-jsx')
 call minpac#add('MaxMEllon/vim-jsx-pretty')
 call minpac#add('mustache/vim-mustache-handlebars')
+call minpac#add('hashivim/vim-terraform')
 
 call minpac#add('Valloric/MatchTagAlways')
+call minpac#add('powerman/vim-plugin-AnsiEsc')
