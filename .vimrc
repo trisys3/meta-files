@@ -11,6 +11,8 @@ if !empty(glob('~/.minpacrc.vim'))
   source ~/.minpacrc.vim
 endif
 
+let python_recommended_style = 0
+
 syntax on
 filetype plugin indent on
 
@@ -30,6 +32,8 @@ set pastetoggle=<F10>
 
 set updatetime=259
 
+set backspace=indent,eol,start
+
 let jsx_ext_required = 0
 
 nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
@@ -46,16 +50,26 @@ let ale_linters = {
 \   'javascript': ['eslint'],
 \   'json': ['jshint'],
 \   'css': ['stylelint'],
+\   'scss': ['stylelint'],
 \   'vim': ['vint'],
 \ }
 
 let ale_fixers = {
 \   'javascript': ['eslint'],
+\   'javascriptreact': ['eslint'],
+\   'javascript.jsx': ['eslint'],
+\   'css': ['stylelint'],
+\   'scss': ['stylelint'],
+\   'ruby': ['rubocop'],
 \ }
 
-let ale_fix_on_save = 1
+" let ale_fix_on_save = 1
+
+" "fix file"
+nnoremap <leader>ff :ALEFix<CR>
 
 let ale_emit_conflict_warnings = 0
+let ale_virtualtext_cursor = 'disabled'
 
 let AutoPairsCenterLine = 0
 
@@ -67,7 +81,7 @@ set incsearch         " highlight matches while searching
 
 set lazyredraw      " don't redraw while editing macros
 
-colorscheme delek
+colorscheme elflord
 
 highlight ALEWarning ctermbg=DarkMagenta
 
@@ -81,7 +95,7 @@ set softtabstop=2
 set autoindent
 set smartindent
 
-set noshowmode      " airline already does
+" set noshowmode      " airline already does
 set laststatus=2    " always show the status bar
 let airline#extensions#wordcount#enabled = 0
 let airline#extensions#whitespace#mixed_indent_algo = 1
@@ -128,6 +142,7 @@ set viminfo='100,<50,s10    " do not disable highlighting when opening the vimin
 set nowritebackup
 set nobackup    " when reading
 " set swapfile
+set dir=$HOME/.vim/swap/
 
 " faster saving
 map <C-c> :quit<CR>
@@ -141,4 +156,12 @@ function ToggleYcmHover()
 
   let b:ycm_hover.command = 'GetDoc'
   execute "normal \<plug>(YCMHover)"
+endfunction
+
+let g:quickOpened = 0
+function OnFirstQfOpen()
+  if g:quickOpened != 1
+    let g:quickOpened = 1
+    AnsiEsc
+  endif
 endfunction
