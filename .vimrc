@@ -58,10 +58,13 @@ let ale_fixers = {
 \   'javascript': ['eslint'],
 \   'javascriptreact': ['eslint'],
 \   'javascript.jsx': ['eslint'],
+\   'typescriptreact': ['eslint'],
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
 \   'ruby': ['rubocop'],
 \ }
+
+let ale_ruby_rubocop_executable = 'bundle'
 
 " let ale_fix_on_save = 1
 
@@ -117,6 +120,7 @@ let ycm_complete_in_comments = 1
 let ycm_collect_identifiers_from_comments_and_strings = 1
 let ycm_seed_identifiers_with_syntax = 1
 let ycm_hover = {'command': '', 'syntax': &filetype}
+let ycm_auto_hover = '0'
 nmap <silent> <leader>h :call ToggleYcmHover()<CR>
 
 let ycm_key_list_select_completion = ['<TAB>']
