@@ -42,3 +42,8 @@ call minpac#add('hashivim/vim-terraform')
 
 call minpac#add('Valloric/MatchTagAlways')
 call minpac#add('powerman/vim-plugin-AnsiEsc')
+call minpac#add('SirVer/ultisnips')
+call minpac#add('honza/vim-snippets')
+
+" call minpac#add('github/copilot.vim')
+call minpac#add('pasky/claude.vim')
