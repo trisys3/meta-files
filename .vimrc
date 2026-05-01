@@ -152,6 +152,12 @@ set dir=$HOME/.vim/swap/
 map <C-c> :quit<CR>
 map <C-x> :exit<CR>
 
+let g:copilot_node_command = '~/.asdf/shims/node'
+
+let g:UltiSnipsExpandTrigger = '<c-e>'
+let g:UltiSnipsJumpForwardTrigger = '<c-b>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-z>'
+
 function ToggleYcmHover()
   if b:ycm_hover.command != ''
     let b:ycm_hover.command = ''
